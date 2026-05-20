@@ -1,0 +1,427 @@
+{
+	"id": "0db04fe5-5370-496e-94c2-b9963372828d",
+	"name": "nopCommerce 抓包接口测试",
+	"timestamp": "2026-05-20T01:56:53.677Z",
+	"collection_id": "54801379-3085bc84-33db-4083-a63e-a5b17c4ccc16",
+	"folder_id": 0,
+	"environment_id": "54801379-8c025372-b73d-4221-915c-a5f39da14864",
+	"totalPass": 18,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-05-20T01:56:43.663Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "83375c56-65af-4f13-b91f-de9e00cef6b6",
+			"name": "刷新登录Token",
+			"url": "http://localhost:5000/login",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				83
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "acb8c246-2af5-4e00-8ef3-f0c891ca5192",
+			"name": "获取登录请求",
+			"url": "http://localhost:5000/login?returnurl=%2F",
+			"time": 149,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"登录成功（状态码302或200）": true
+			},
+			"testPassFailCounts": {
+				"登录成功（状态码302或200）": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"登录成功（状态码302或200）": true
+				}
+			]
+		},
+		{
+			"id": "09d1bd27-62ca-460f-aed6-4253950aeb82",
+			"name": "搜索商品请求",
+			"url": "http://localhost:5000/search?q=apple",
+			"time": 212,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"搜索结果正确": true
+			},
+			"testPassFailCounts": {
+				"搜索结果正确": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				212
+			],
+			"allTests": [
+				{
+					"搜索结果正确": true
+				}
+			]
+		},
+		{
+			"id": "c61c3a37-7f65-4e4c-9950-a1ff9f5c6f74",
+			"name": "（前置）获取商品4的Token",
+			"url": "http://localhost:5000/search?q=apple",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Token提取成功": true,
+				"搜索页面加载成功": true
+			},
+			"testPassFailCounts": {
+				"Token提取成功": {
+					"pass": 1,
+					"fail": 0
+				},
+				"搜索页面加载成功": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Token提取成功": true,
+					"搜索页面加载成功": true
+				}
+			]
+		},
+		{
+			"id": "ac661aec-4269-4653-bab9-42fbc478ea94",
+			"name": "添加购物车请求",
+			"url": "http://localhost:5000/addproducttocart/catalog/4/1/1",
+			"time": 34,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Add to cart returns 200/302": true,
+				"Cart count increased": true
+			},
+			"testPassFailCounts": {
+				"Add to cart returns 200/302": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Cart count increased": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				34
+			],
+			"allTests": [
+				{
+					"Add to cart returns 200/302": true,
+					"Cart count increased": true
+				}
+			]
+		},
+		{
+			"id": "4c7d311c-fe6d-4620-8306-6c024800a827",
+			"name": "获取购物车内容",
+			"url": "http://localhost:5000/cart",
+			"time": 4590,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"购物车请求状态正常": true,
+				"购物车页面加载成功": true,
+				"页面加载成功": true
+			},
+			"testPassFailCounts": {
+				"购物车请求状态正常": {
+					"pass": 1,
+					"fail": 0
+				},
+				"购物车页面加载成功": {
+					"pass": 1,
+					"fail": 0
+				},
+				"页面加载成功": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4590
+			],
+			"allTests": [
+				{
+					"购物车请求状态正常": true,
+					"购物车页面加载成功": true,
+					"页面加载成功": true
+				}
+			]
+		},
+		{
+			"id": "6855593c-d232-4f7a-b96a-78237bdb3410",
+			"name": "应用优惠券",
+			"url": "http://localhost:5000/cart",
+			"time": 245,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"业务请求成功(200/302都算成功)": true
+			},
+			"testPassFailCounts": {
+				"业务请求成功(200/302都算成功)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				245
+			],
+			"allTests": [
+				{
+					"业务请求成功(200/302都算成功)": true
+				}
+			]
+		},
+		{
+			"id": "44310487-3c34-41c3-a7c2-2de447fd9138",
+			"name": "进入结账页面",
+			"url": "http://localhost:5000/onepagecheckout",
+			"time": 1796,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"页面加载成功": true
+			},
+			"testPassFailCounts": {
+				"页面加载成功": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1796
+			],
+			"allTests": [
+				{
+					"页面加载成功": true
+				}
+			]
+		},
+		{
+			"id": "a8b71122-bfd7-41c3-ac49-547236d71e95",
+			"name": "保存配送地址",
+			"url": "http://localhost:5000/checkout/OpcSaveBilling/",
+			"time": 265,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"保存配送地址请求状态正常": true,
+				"地址保存请求已处理": true
+			},
+			"testPassFailCounts": {
+				"保存配送地址请求状态正常": {
+					"pass": 1,
+					"fail": 0
+				},
+				"地址保存请求已处理": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"保存配送地址请求状态正常": true,
+					"地址保存请求已处理": true
+				}
+			]
+		},
+		{
+			"id": "bdb1a2e5-bf25-4b5a-8caf-4a55855c1312",
+			"name": "确认订单（下单）",
+			"url": "http://localhost:5000/checkout/OpcConfirmOrder/",
+			"time": 427,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"确认订单请求状态正常": true,
+				"订单确认请求已发送": true
+			},
+			"testPassFailCounts": {
+				"确认订单请求状态正常": {
+					"pass": 1,
+					"fail": 0
+				},
+				"订单确认请求已发送": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				427
+			],
+			"allTests": [
+				{
+					"确认订单请求状态正常": true,
+					"订单确认请求已发送": true
+				}
+			]
+		},
+		{
+			"id": "e313a1f2-2720-480b-afa6-fac4e0e738ec",
+			"name": "删除购物车商品",
+			"url": "http://localhost:5000/cart",
+			"time": 364,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"删除购物车请求成功": true,
+				"购物车已更新": true
+			},
+			"testPassFailCounts": {
+				"删除购物车请求成功": {
+					"pass": 1,
+					"fail": 0
+				},
+				"购物车已更新": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				364
+			],
+			"allTests": [
+				{
+					"删除购物车请求成功": true,
+					"购物车已更新": true
+				}
+			]
+		},
+		{
+			"id": "ce76fe1d-908b-4d02-936a-737937d16860",
+			"name": "退出登录",
+			"url": "http://localhost:5000/logout",
+			"time": 258,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Logout request successful": true
+			},
+			"testPassFailCounts": {
+				"Logout request successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				258
+			],
+			"allTests": [
+				{
+					"Logout request successful": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 8628,
+	"collection": {
+		"requests": [
+			{
+				"id": "83375c56-65af-4f13-b91f-de9e00cef6b6",
+				"method": "GET"
+			},
+			{
+				"id": "acb8c246-2af5-4e00-8ef3-f0c891ca5192",
+				"method": "POST"
+			},
+			{
+				"id": "09d1bd27-62ca-460f-aed6-4253950aeb82",
+				"method": "GET"
+			},
+			{
+				"id": "c61c3a37-7f65-4e4c-9950-a1ff9f5c6f74",
+				"method": "GET"
+			},
+			{
+				"id": "ac661aec-4269-4653-bab9-42fbc478ea94",
+				"method": "POST"
+			},
+			{
+				"id": "4c7d311c-fe6d-4620-8306-6c024800a827",
+				"method": "GET"
+			},
+			{
+				"id": "6855593c-d232-4f7a-b96a-78237bdb3410",
+				"method": "POST"
+			},
+			{
+				"id": "44310487-3c34-41c3-a7c2-2de447fd9138",
+				"method": "GET"
+			},
+			{
+				"id": "a8b71122-bfd7-41c3-ac49-547236d71e95",
+				"method": "POST"
+			},
+			{
+				"id": "bdb1a2e5-bf25-4b5a-8caf-4a55855c1312",
+				"method": "POST"
+			},
+			{
+				"id": "e313a1f2-2720-480b-afa6-fac4e0e738ec",
+				"method": "POST"
+			},
+			{
+				"id": "ce76fe1d-908b-4d02-936a-737937d16860",
+				"method": "GET"
+			}
+		]
+	}
+}

@@ -1,0 +1,625 @@
+{
+  "info": {
+    "_postman_id": "3085bc84-33db-4083-a63e-a5b17c4ccc16",
+    "name": "nopCommerce 抓包接口测试",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54801379",
+    "_collection_link": "https://go.postman.co/collection/54801379-3085bc84-33db-4083-a63e-a5b17c4ccc16?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "获取登录请求",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"登录请求状态正常\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+              "});\r",
+              "pm.test(\"登录成功\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"Your store\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:5000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:5000/login"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Cookie",
+            "value": ".Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.RecentlyViewedProducts=17%2C4%2C1; .Nop.Culture=c%3Den-US%7Cuic%3Den-US; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "Email",
+              "value": "test1@example.com"
+            },
+            {
+              "type": "text",
+              "key": "Password",
+              "value": "123456"
+            },
+            {
+              "type": "text",
+              "key": "__RequestVerificationToken",
+              "value": "CfDJ8FGec_jZMHtCoI9z0JXPNg67ciwP07Y-i3r__fC4gxYTbY2OT9mFSXMBUqKwh5K5He3AfHoUsfe0pMh2vh0RMrlpq0ovqqlTAZFt_Y3ZBwmWO56qutRyExG7M97f0ddSMlNLwadLBOKF_00yDE21LobYGS3FAfuQ_pISWofJqgOqDlfbGQTVobPV8Fp3tCy11Q"
+            },
+            {
+              "type": "text",
+              "key": "RememberMe",
+              "value": "false"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "login"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:5000/login' \\\r\n  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\r\n  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \\\r\n  -H 'Cache-Control: max-age=0' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/x-www-form-urlencoded' \\\r\n  -b '.Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.RecentlyViewedProducts=17%2C4%2C1; .Nop.Culture=c%3Den-US%7Cuic%3Den-US; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76' \\\r\n  -H 'Origin: http://localhost:5000' \\\r\n  -H 'Referer: http://localhost:5000/login' \\\r\n  -H 'Sec-Fetch-Dest: document' \\\r\n  -H 'Sec-Fetch-Mode: navigate' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'Sec-Fetch-User: ?1' \\\r\n  -H 'Upgrade-Insecure-Requests: 1' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw 'Email=test1%40example.com&Password=123456&__RequestVerificationToken=CfDJ8FGec_jZMHtCoI9z0JXPNg67ciwP07Y-i3r__fC4gxYTbY2OT9mFSXMBUqKwh5K5He3AfHoUsfe0pMh2vh0RMrlpq0ovqqlTAZFt_Y3ZBwmWO56qutRyExG7M97f0ddSMlNLwadLBOKF_00yDE21LobYGS3FAfuQ_pISWofJqgOqDlfbGQTVobPV8Fp3tCy11Q&RememberMe=false'"
+      },
+      "response": []
+    },
+    {
+      "name": "搜索商品请求",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"搜索结果正确\", function () {\r",
+              "    let body = pm.response.text();\r",
+              "    \r",
+              "    // 如果页面没有提示“无产品”，就代表有结果\r",
+              "    let hasResult = !body.includes(\"No products\");\r",
+              "    \r",
+              "    // 如果有结果，验证商品区域存在\r",
+              "    if (hasResult) {\r",
+              "        pm.expect(body).to.include(\"product-grid\");\r",
+              "    } else {\r",
+              "        pm.expect(body).to.include(\"No products\");\r",
+              "    }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:5000/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Cookie",
+            "value": ".Nop.RecentlyViewedProducts=4%2C1%2C39; .Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/search?q=apple",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "apple"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:5000/search?q=apple' \\\r\n  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\r\n  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -b '.Nop.RecentlyViewedProducts=4%2C1%2C39; .Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US' \\\r\n  -H 'Referer: http://localhost:5000/' \\\r\n  -H 'Sec-Fetch-Dest: document' \\\r\n  -H 'Sec-Fetch-Mode: navigate' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'Sec-Fetch-User: ?1' \\\r\n  -H 'Upgrade-Insecure-Requests: 1' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "添加购物车请求",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Add to cart returns 200/302\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);\r",
+              "});\r",
+              "\r",
+              "// 可选：检查响应中是否出现“购物车数量增加”的文本\r",
+              "pm.test(\"Cart count increased\", function () {\r",
+              "    // 如果返回的是 HTML，可以查找 mini-shopping-cart 里的数字变化\r",
+              "    // 更简单的方法：后续单独调用获取购物车接口\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded; charset=UTF-8"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:5000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:5000/apple-macbook-pro-13-inch"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"
+          },
+          {
+            "key": "X-Requested-With",
+            "value": "XMLHttpRequest"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Cookie",
+            "value": ".Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg48gp77VEK7xA6EFlFTK0MpcYY4WQ9kpc5XcwvSuDrSPA0RjDG6uxxa_L50Dy5pN94xdEuB4Dlr00sgj0DJEiapQRAViQZrz--baR_g8Ve5v397EuBs6pRlgIQN0UiuADPMt_MjEpxMnRhEqna9MtbCy21BXB4oovhkQXoovLxFS0b54QK3Qzokb9LlSMcu93820RpzRRtRyNZkFVjYFgu5rcpiu_uqWj9HdmZbyDSQxvh0uFa_Oe6RqxEHh3zXGpmX4paINrB2xyOB8az_AR1SsjZwP5rGjgNO0lTGX_DYQzRZvWzqZmEgtNaaqNnUUD5VI4SRvSg-mZNh28kvsggcPZnf8NXnQlxJFPJXRuWod_8nBYh0nYEPMbw7jB4H5oUJIjtp1Cm5N94NKOa5S2X2rd1hg1phLwrDaH-pJHClBJUsphmoz8L4R9Gjs3QriQn2PqQpNzGPnQK0J4NLEMVDnokMfYnO1PbNpZK-kLgSim5NW3wKYKMWd3XRSRt4GoqInFQfeKuDBB9Qfca51luShhNeS5mNzCRq6qRapmu4pA; .Nop.RecentlyViewedProducts=13%2C17%2C4; .Nop.Culture=c%3Den-US%7Cuic%3Den-US; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "addtocart_4.EnteredQuantity=2&__RequestVerificationToken=CfDJ8FGec_jZMHtCoI9z0JXPNg4kOunY0YDwBK_-DBP4BaRRpgZ36CfgI9P4b8UjjF4FauNzb7H6oUheMckFkZrHj9YglnYt3vjoxEOdcnlMhi3mXxsJmdHQHL0dk38wLImD4-_RlSQ7jFvBGCXvc6J2iHN7mBwOyxx_6dvPYnhDo3TTxpowUYHvi8qKPEUmXhj6bA",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/addproducttocart/details/4/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "addproducttocart",
+            "details",
+            "4",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:5000/addproducttocart/details/4/1' \\\r\n  -H 'Accept: */*' \\\r\n  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \\\r\n  -b '.Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg48gp77VEK7xA6EFlFTK0MpcYY4WQ9kpc5XcwvSuDrSPA0RjDG6uxxa_L50Dy5pN94xdEuB4Dlr00sgj0DJEiapQRAViQZrz--baR_g8Ve5v397EuBs6pRlgIQN0UiuADPMt_MjEpxMnRhEqna9MtbCy21BXB4oovhkQXoovLxFS0b54QK3Qzokb9LlSMcu93820RpzRRtRyNZkFVjYFgu5rcpiu_uqWj9HdmZbyDSQxvh0uFa_Oe6RqxEHh3zXGpmX4paINrB2xyOB8az_AR1SsjZwP5rGjgNO0lTGX_DYQzRZvWzqZmEgtNaaqNnUUD5VI4SRvSg-mZNh28kvsggcPZnf8NXnQlxJFPJXRuWod_8nBYh0nYEPMbw7jB4H5oUJIjtp1Cm5N94NKOa5S2X2rd1hg1phLwrDaH-pJHClBJUsphmoz8L4R9Gjs3QriQn2PqQpNzGPnQK0J4NLEMVDnokMfYnO1PbNpZK-kLgSim5NW3wKYKMWd3XRSRt4GoqInFQfeKuDBB9Qfca51luShhNeS5mNzCRq6qRapmu4pA; .Nop.RecentlyViewedProducts=13%2C17%2C4; .Nop.Culture=c%3Den-US%7Cuic%3Den-US; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76' \\\r\n  -H 'Origin: http://localhost:5000' \\\r\n  -H 'Referer: http://localhost:5000/apple-macbook-pro-13-inch' \\\r\n  -H 'Sec-Fetch-Dest: empty' \\\r\n  -H 'Sec-Fetch-Mode: cors' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0' \\\r\n  -H 'X-Requested-With: XMLHttpRequest' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw 'addtocart_4.EnteredQuantity=2&__RequestVerificationToken=CfDJ8FGec_jZMHtCoI9z0JXPNg4kOunY0YDwBK_-DBP4BaRRpgZ36CfgI9P4b8UjjF4FauNzb7H6oUheMckFkZrHj9YglnYt3vjoxEOdcnlMhi3mXxsJmdHQHL0dk38wLImD4-_RlSQ7jFvBGCXvc6J2iHN7mBwOyxx_6dvPYnhDo3TTxpowUYHvi8qKPEUmXhj6bA'"
+      },
+      "response": []
+    },
+    {
+      "name": "获取购物车内容",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"购物车请求状态正常\", function () {\r",
+              "    pm.expect(pm.response.code).to.equal(200);\r",
+              "});\r",
+              "pm.test(\"购物车页面加载成功\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"Shopping cart\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:5000/apple-icam"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Cookie",
+            "value": ".Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.RecentlyViewedProducts=17%2C4%2C1; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/cart",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "cart"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:5000/cart' \\\r\n  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\r\n  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -b '.Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg6CLaGoKoRU9IucoOpRpAMNFw6tMa-e0U2HDsprTD5ljRWy7zibkc6Ak0_yyGGBBvPEm4ZQ02gxqqtxq7AH1IEwXTo-nkQkJYPFZZN-D-WZflB57q0C-_5s-C549srJwwG3dGgQ_aAGvyvvIaH12aOA3S5PP3s1FBdsK03OnkfN7Al3LP2dJ5CcWgO5qIA7i8HDzSIQ9unyFpORMpTJJzR6jThd0zvHQdVzGzsBIOauIhG5PKGRCRG-rcAfs7n2yMRhrVSzXl5XYqdmAc6FmCqqUv-b9SzfhANJy7bSrD-XKabJHenLzQz7Zx0WARYZG3xkaJRt7Cgr5wa-3pRORd2wEs9BwW6YqAFIhEs33szzgnxMzxIEo1VSLC77M5F4q1j0oc-xLph4F1rFRX6O8JLk8Yb4KVNJBkhBxwNoMRXtoQROnDnT4ygiSTdISxYEKk1a7JS0NYYEBmQTT09Y7YTz2XdymA1kiRYaZH62Gc7OM9R1LgM78WzesoAcnU9jGtiulPW7tE7okYomA1n3RSY7gkfNdPHShC5Cb20KJ1isRQ; .Nop.RecentlyViewedProducts=17%2C4%2C1; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US' \\\r\n  -H 'Referer: http://localhost:5000/apple-icam' \\\r\n  -H 'Sec-Fetch-Dest: document' \\\r\n  -H 'Sec-Fetch-Mode: navigate' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'Sec-Fetch-User: ?1' \\\r\n  -H 'Upgrade-Insecure-Requests: 1' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "删除购物车商品",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"删除购物车请求成功\", function () {\r",
+              "    pm.response.to.be.success;\r",
+              "});\r",
+              "\r",
+              "pm.test(\"购物车已更新\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"Shopping cart\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:5000"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:5000/cart"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "document"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "navigate"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-origin"
+          },
+          {
+            "key": "Sec-Fetch-User",
+            "value": "?1"
+          },
+          {
+            "key": "Upgrade-Insecure-Requests",
+            "value": "1"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Cookie",
+            "value": ".Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg48gp77VEK7xA6EFlFTK0MpcYY4WQ9kpc5XcwvSuDrSPA0RjDG6uxxa_L50Dy5pN94xdEuB4Dlr00sgj0DJEiapQRAViQZrz--baR_g8Ve5v397EuBs6pRlgIQN0UiuADPMt_MjEpxMnRhEqna9MtbCy21BXB4oovhkQXoovLxFS0b54QK3Qzokb9LlSMcu93820RpzRRtRyNZkFVjYFgu5rcpiu_uqWj9HdmZbyDSQxvh0uFa_Oe6RqxEHh3zXGpmX4paINrB2xyOB8az_AR1SsjZwP5rGjgNO0lTGX_DYQzRZvWzqZmEgtNaaqNnUUD5VI4SRvSg-mZNh28kvsggcPZnf8NXnQlxJFPJXRuWod_8nBYh0nYEPMbw7jB4H5oUJIjtp1Cm5N94NKOa5S2X2rd1hg1phLwrDaH-pJHClBJUsphmoz8L4R9Gjs3QriQn2PqQpNzGPnQK0J4NLEMVDnokMfYnO1PbNpZK-kLgSim5NW3wKYKMWd3XRSRt4GoqInFQfeKuDBB9Qfca51luShhNeS5mNzCRq6qRapmu4pA; .Nop.RecentlyViewedProducts=13%2C17%2C4; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "itemquantity29",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "removefromcart",
+              "value": "29",
+              "type": "text"
+            },
+            {
+              "key": "updatecart",
+              "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "CountryId",
+              "value": "46",
+              "type": "text"
+            },
+            {
+              "key": "StateProvinceId",
+              "value": "239",
+              "type": "text"
+            },
+            {
+              "key": "ZipPostalCode",
+              "value": "11",
+              "type": "text"
+            },
+            {
+              "key": "shipping-option-#estimate-shipping-popup",
+              "value": "on",
+              "type": "text"
+            },
+            {
+              "key": "checkout_attribute_1",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "discountcouponcode",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "giftcardcouponcode",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "__RequestVerificationToken",
+              "value": "CfDJ8FGec_jZMHtCoI9z0JXPNg7krPzFoOXnrGzwzaX0A8VzbSbLvMmUATVTQSE_1EOfeMhgp7MVLWl_7f3dQe91kRObzYJC73ff55R4MqpfDOxOnng1dLL0aTtAovBk9YWdz2qb8WWhYLjFh8LfT4vthdsFuI0_TYTsy3g0lVK9VXBE1K7l8Xbs51PjFusLn1ycWg",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/cart",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "cart"
+          ]
+        },
+        "description": "Generated from cURL: curl 'http://localhost:5000/cart' \\\r\n  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\r\n  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \\\r\n  -H 'Cache-Control: max-age=0' \\\r\n  -H 'Connection: keep-alive' \\\r\n  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryZFlRpnobSybY0oIC' \\\r\n  -b '.Nop.Antiforgery=CfDJ8FGec_jZMHtCoI9z0JXPNg4N78gJnLwnjsOFKIFEscAKgMIWbW5Sl3MgWsUAonGi6VKXWI-Rv7C8q9oySLCszjOQAyjnT4m6zWA2YhdX4eGV24ABnURMypMHpXwpTdsA4NFtrxGWxu0I7xtCawyug18; .Nop.Authentication=CfDJ8FGec_jZMHtCoI9z0JXPNg48gp77VEK7xA6EFlFTK0MpcYY4WQ9kpc5XcwvSuDrSPA0RjDG6uxxa_L50Dy5pN94xdEuB4Dlr00sgj0DJEiapQRAViQZrz--baR_g8Ve5v397EuBs6pRlgIQN0UiuADPMt_MjEpxMnRhEqna9MtbCy21BXB4oovhkQXoovLxFS0b54QK3Qzokb9LlSMcu93820RpzRRtRyNZkFVjYFgu5rcpiu_uqWj9HdmZbyDSQxvh0uFa_Oe6RqxEHh3zXGpmX4paINrB2xyOB8az_AR1SsjZwP5rGjgNO0lTGX_DYQzRZvWzqZmEgtNaaqNnUUD5VI4SRvSg-mZNh28kvsggcPZnf8NXnQlxJFPJXRuWod_8nBYh0nYEPMbw7jB4H5oUJIjtp1Cm5N94NKOa5S2X2rd1hg1phLwrDaH-pJHClBJUsphmoz8L4R9Gjs3QriQn2PqQpNzGPnQK0J4NLEMVDnokMfYnO1PbNpZK-kLgSim5NW3wKYKMWd3XRSRt4GoqInFQfeKuDBB9Qfca51luShhNeS5mNzCRq6qRapmu4pA; .Nop.RecentlyViewedProducts=13%2C17%2C4; .Nop.Customer=e486aab5-7f61-472d-8204-f53991040a76; .Nop.Culture=c%3Den-US%7Cuic%3Den-US' \\\r\n  -H 'Origin: http://localhost:5000' \\\r\n  -H 'Referer: http://localhost:5000/cart' \\\r\n  -H 'Sec-Fetch-Dest: document' \\\r\n  -H 'Sec-Fetch-Mode: navigate' \\\r\n  -H 'Sec-Fetch-Site: same-origin' \\\r\n  -H 'Sec-Fetch-User: ?1' \\\r\n  -H 'Upgrade-Insecure-Requests: 1' \\\r\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0' \\\r\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Microsoft Edge\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  --data-raw $'------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"itemquantity29\"\\r\\n\\r\\n1\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"removefromcart\"\\r\\n\\r\\n29\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"updatecart\"\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"CountryId\"\\r\\n\\r\\n46\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"StateProvinceId\"\\r\\n\\r\\n239\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"ZipPostalCode\"\\r\\n\\r\\n11\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"shipping-option-#estimate-shipping-popup\"\\r\\n\\r\\non\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"checkout_attribute_1\"\\r\\n\\r\\n1\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"discountcouponcode\"\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"giftcardcouponcode\"\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC\\r\\nContent-Disposition: form-data; name=\"__RequestVerificationToken\"\\r\\n\\r\\nCfDJ8FGec_jZMHtCoI9z0JXPNg7krPzFoOXnrGzwzaX0A8VzbSbLvMmUATVTQSE_1EOfeMhgp7MVLWl_7f3dQe91kRObzYJC73ff55R4MqpfDOxOnng1dLL0aTtAovBk9YWdz2qb8WWhYLjFh8LfT4vthdsFuI0_TYTsy3g0lVK9VXBE1K7l8Xbs51PjFusLn1ycWg\\r\\n------WebKitFormBoundaryZFlRpnobSybY0oIC--\\r\\n'"
+      },
+      "response": []
+    }
+  ]
+}
